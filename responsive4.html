@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soul Restaurant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#ff6f61;
+  --secondary:#ffb703;
+  --dark:#1f1f1f;
+  --light:#fdf6f0;
+  --glass:rgba(255,255,255,0.85);
+}
+
+*{scroll-behavior:smooth;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+}
+
+/* ================= HEADER ================= */
+header{
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1555992336-03a23cba19b1?w=1600');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  padding:90px 15px;
+  text-align:center;
+}
+
+header h1{
+  letter-spacing:4px;
+}
+
+header p{
+  color:var(--secondary);
+  font-style:italic;
+  font-size:1.3rem;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  background:var(--dark);
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+.navbar-toggler {
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.navbar-nav .nav-link{
+  margin:0 15px;
+  font-weight:500;
+  padding:.35rem .6rem;
+}
+
+.navbar-nav .nav-link:hover{
+  color:var(--primary)!important;
+  transform:scale(1.1);
+  transition:.3s;
+} 
+
+/* ================= MENU ================= */
+.menu-section h2{
+  font-weight:700;
+  color:var(--dark);
+}
+
+.card{
+  border:none;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 35px rgba(0,0,0,.25);
+}
+
+.card img{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  display:block;
+}
+
+.card-body{
+  background:white;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  header { padding:60px 15px; }
+  header h1 { font-size:1.8rem; }
+  header p { font-size:1rem; }
+  .booking-form { padding:20px; }
+  .offer-box { padding:18px; }
+  .card img { aspect-ratio:4/3; }
+}
+
+@media (max-width: 576px) {
+  header { padding:50px 10px; }
+  header h1 { font-size:1.5rem; }
+  .navbar-nav .nav-link { margin:0 8px; }
+  .offer-box { margin-bottom:15px; }
+  .booking-form { box-shadow: none; }
+} 
+
+.bg-veg{background:#2ecc71!important;}
+.bg-nonveg{background:#e63946!important;}
+
+/* ================= OFFERS ================= */
+.offer-box{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 12px 25px rgba(0,0,0,.3);
+  transition:.4s;
+}
+
+.offer-box:hover{
+  transform:scale(1.08) rotate(-1deg);
+}
+
+/* ================= BOOKING ================= */
+.booking-section{
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600');
+  background-size:cover;
+  padding:90px 0;
+}
+
+.booking-form{
+  background:var(--glass);
+  border-radius:25px;
+  padding:40px;
+  box-shadow:0 25px 45px rgba(0,0,0,.4);
+}
+
+.booking-form h2{
+  color:var(--primary);
+  font-weight:700;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form select{
+  border-radius:12px;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 12px rgba(255,111,97,.6);
+}
+
+/* ================= FEEDBACK ================= */
+#feedback{
+  background:white;
+}
+
+#feedback a{
+  color:var(--primary);
+  font-size:1.1rem;
+}
+
+#feedback a:hover{
+  color:var(--dark);
+}
+
+/* Buttons */
+.btn {
+  padding:0.7rem 1rem;
+  border-radius:10px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--dark);
+  color:white;
+  padding:20px;
+  letter-spacing:1px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<h1 class="display-4 fw-bold">SOUL RESTAURANT</h1>
+<p>"Where every bite touches the soul"</p>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="navMenu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+<li class="nav-item"><a class="nav-link" href="#booking">Order</a></li>
+<li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- MENU -->
+<section id="menu" class="menu-section py-5">
+<div class="container">
+<h2 class="text-center mb-5">Our Signature Menu</h2>
+
+<h4 class="mb-3">🥗 Vegetarian</h4>
+<div class="row g-4">
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908554164-fd24d7b0b9f6?w=500" loading="lazy" alt="Paneer Tikka">
+<div class="card-body text-center">
+<h5>Paneer Tikka <span class="badge bg-veg">Veg</span></h5>
+<p class="fw-bold text-muted">₹180</p>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605475128473-02f6a4ad1e9b?w=500" loading="lazy" alt="Veg Biryani">
+<div class="card-body text-center">
+<h5>Veg Biryani <span class="badge bg-veg">Veg</span></h5>
+<p class="fw-bold text-muted">₹220</p>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500" loading="lazy" alt="Veg Pizza">
+<div class="card-body text-center">
+<h5>Veg Pizza <span class="badge bg-veg">Veg</span></h5>
+<p class="fw-bold text-muted">₹230</p>
+</div>
+</div>
+</div>
+</div>
+
+<h4 class="mt-5 mb-3">🍗 Non-Vegetarian</h4>
+<div class="row g-4">
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908177074-9d59b6c4b8b8?w=500" loading="lazy" alt="Chicken 65">
+<div class="card-body text-center">
+<h5>Chicken 65 <span class="badge bg-nonveg">Non-Veg</span></h5>
+<p class="fw-bold text-muted">₹220</p>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631515243343-dfcb2d8a4a7e?w=500" loading="lazy" alt="Chicken Biryani">
+<div class="card-body text-center">
+<h5>Chicken Biryani <span class="badge bg-nonveg">Non-Veg</span></h5>
+<p class="fw-bold text-muted">₹280</p>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-md-4">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1625944525533-473f1a7a5a3d?w=500" loading="lazy" alt="Butter Chicken">
+<div class="card-body text-center">
+<h5>Butter Chicken <span class="badge bg-nonveg">Non-Veg</span></h5>
+<p class="fw-bold text-muted">₹300</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="py-5">
+<div class="container">
+<h2 class="text-center mb-5">🔥 Today’s Special</h2>
+<div class="row g-4 justify-content-center">
+<div class="col-12 col-sm-6 col-md-4"><div class="offer-box"><h5>Combo Blast</h5><p>Biryani + Starter @ ₹299</p></div></div>
+<div class="col-12 col-sm-6 col-md-4"><div class="offer-box"><h5>Family Feast</h5><p>25% OFF above ₹999</p></div></div>
+<div class="col-12 col-sm-6 col-md-4"><div class="offer-box"><h5>Sweet Surprise</h5><p>Free Dessert</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 booking-form">
+<h2 class="text-center mb-4">Place Your Order</h2>
+<input type="text" class="form-control mb-3" placeholder="Full Name" aria-label="Full Name">
+<input type="email" class="form-control mb-3" placeholder="Email" aria-label="Email">
+<input type="tel" class="form-control mb-3" placeholder="Phone" aria-label="Phone">
+<textarea class="form-control mb-3" placeholder="Delivery Address" aria-label="Delivery Address" rows="3"></textarea>
+<div class="mb-4">
+  <label class="d-block mb-2 fw-bold">Select Items</label>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item1" value="Paneer Tikka">
+    <label class="form-check-label" for="item1">Paneer Tikka</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item2" value="Veg Biryani">
+    <label class="form-check-label" for="item2">Veg Biryani</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item3" value="Veg Pizza">
+    <label class="form-check-label" for="item3">Veg Pizza</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item4" value="Chicken 65">
+    <label class="form-check-label" for="item4">Chicken 65</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item5" value="Chicken Biryani">
+    <label class="form-check-label" for="item5">Chicken Biryani</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="item6" value="Butter Chicken">
+    <label class="form-check-label" for="item6">Butter Chicken</label>
+  </div>
+</div>
+<button class="btn btn-danger w-100 py-2 fw-bold">Confirm Order</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback" class="text-center py-4">
+<a href="https://forms.gle/" target="_blank">✨ Click here to give your feedback</a>
+<p class="fst-italic mt-2">Your feedback helps us serve better.</p>
+</section>
+
+<footer>© 2025 Soul Restaurant • Crafted with ❤️</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
