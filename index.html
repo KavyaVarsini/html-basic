@@ -3,162 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Basics Showcase</title>
+  <title>Soul Restaurant</title>
 
   <style>
-    /* RESET */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(120deg, #f9f9ff, #f3e8ff);
-      color: #333;
-      margin: 0;
-      padding: 20px;
+      background: #f5f5f5;
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
+      background: #2b1b17;
+      color: white;
       text-align: center;
-      background: linear-gradient(90deg, #cdb4db, #ffc8dd);
-      padding: 30px 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      padding: 25px;
     }
 
     header h1 {
-      margin-bottom: 8px;
-      color: #3c096c;
+      font-size: 40px;
     }
 
     header p {
-      font-size: 16px;
-      color: #4a148c;
+      font-style: italic;
+      color: #f1c27d;
+      margin-top: 8px;
     }
 
-    /* SECTION CARD */
-    section {
-      margin: 40px auto;
-      padding: 25px;
-      max-width: 900px;
-      background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.15);
-    }
-
-    h2 {
-      color: #5a189a;
-      border-left: 6px solid #9d4edd;
-      padding-left: 10px;
-      margin-bottom: 15px;
-    }
-
-    /* LISTS */
-    ul {
-      background: #f9f7ff;
-      padding: 15px 30px;
-      border-radius: 10px;
-      width: fit-content;
-    }
-
-    li {
-      padding: 5px 0;
-      font-weight: 500;
-    }
-
-    /* IMAGE */
-    img {
-      width: 260px;
-      border-radius: 14px;
-      display: block;
-      margin-top: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.05);
-    }
-
-    /* TABLE */
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    th {
-      background: linear-gradient(90deg, #7b2cbf, #9d4edd);
-      color: white;
-      padding: 12px;
-    }
-
-    td {
-      padding: 12px;
+    nav {
+      background: #3b241e;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      padding: 12px;
     }
 
-    tr:hover {
-      background-color: #f3e8ff;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
     }
 
-    /* FORM */
-    form {
-      margin-top: 15px;
+    nav a:hover {
+      color: #f1c27d;
     }
 
-    label {
-      font-weight: 600;
-      color: #4a148c;
+    main section {
+      padding: 40px 60px;
     }
 
-    input, textarea {
+    /* MENU */
+    #menu {
+      background: #fdf6f0;
+    }
+
+    #menu h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-box {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu-box h3 {
+      color: #8b4513;
+      margin-bottom: 10px;
+    }
+
+    .menu-box ul {
+      list-style: none;
+    }
+
+    .menu-box li {
+      margin: 6px 0;
+    }
+
+    /* OFFERS */
+    #offers {
+      background: #fff3e6;
+      text-align: center;
+    }
+
+    .offers-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .offer-box {
+      background: white;
+      padding: 25px;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .offer-box h3 {
+      color: #d35400;
+      margin-bottom: 8px;
+    }
+
+    /* BOOKING */
+    #booking {
+      background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    #booking::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .booking-form {
+      position: relative;
+      max-width: 520px;
+      margin: auto;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .booking-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .booking-form label {
+      font-weight: bold;
+    }
+
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
       width: 100%;
       padding: 10px;
-      margin: 6px 0 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 14px;
+      margin: 8px 0 15px;
     }
 
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #9d4edd;
-      box-shadow: 0 0 6px rgba(157, 78, 221, 0.5);
-    }
-
-    button {
-      background: linear-gradient(90deg, #5a189a, #7b2cbf);
+    .booking-form button {
+      width: 100%;
+      padding: 12px;
+      background: #8b4513;
       color: white;
-      padding: 12px 22px;
       border: none;
-      border-radius: 10px;
+      font-size: 16px;
       cursor: pointer;
-      font-size: 15px;
-      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    button:hover {
-      background: linear-gradient(90deg, #3c096c, #5a189a);
-      transform: scale(1.05);
+    .booking-form button:hover {
+      background: #6f3610;
     }
 
-    /* FOOTER */
-    footer {
+    /* FEEDBACK */
+    #feedback {
       text-align: center;
-      margin-top: 50px;
-      color: #555;
-      font-size: 14px;
+      background: #fafafa;
+    }
+
+    #feedback a {
+      font-size: 18px;
+      color: #8b4513;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #feedback p {
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #2b1b17;
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
@@ -166,70 +203,82 @@
 <body>
 
 <header>
-  <h1>HTML Basics Showcase</h1>
-  <p>A simple webpage demonstrating core HTML elements with modern styling</p>
+  <h1>Soul Restaurant</h1>
+  <p>"Where every bite touches the soul"</p>
 </header>
 
-<section>
-  <h2>Text Formatting</h2>
-  <p>
-    <strong>Bold</strong>,
-    <em>Italic</em>,
-    <mark>Highlighted</mark>,
-    H<sub>2</sub>O,
-    E = mc<sup>2</sup>
-  </p>
+<nav>
+  <a href="#menu">Menu</a>
+  <a href="#offers">Offers</a>
+  <a href="#booking">Booking</a>
+  <a href="#feedback">Feedback</a>
+</nav>
+
+<main>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-container">
+    <div class="menu-box">
+      <h3>Starters</h3>
+      <ul>
+        <li>Tomato Soup – ₹120</li>
+        <li>Sweet Corn Soup – ₹130</li>
+        <li>Paneer Tikka – ₹180</li>
+      </ul>
+    </div>
+
+    <div class="menu-box">
+      <h3>Main Course</h3>
+      <ul>
+        <li>Veg Biryani – ₹220</li>
+        <li>Chicken Biryani – ₹280</li>
+        <li>Butter Chicken – ₹300</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Lists</h2>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-  </ul>
+<section id="offers">
+  <h2>Today's Offers</h2>
+  <div class="offers-container">
+    <div class="offer-box">
+      <h3>Combo Deal</h3>
+      <p>Starter + Main Course @ ₹299</p>
+    </div>
+    <div class="offer-box">
+      <h3>Family Feast</h3>
+      <p>20% OFF above ₹999</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Image</h2>
-  <img src="https://i.pinimg.com/736x/d0/f8/4f/d0f84f5039a410fd3bef24d2f9811548.jpg" alt="Sample Image">
+<section id="booking">
+  <div class="booking-form">
+    <h2>Online Booking</h2>
+
+    <label>Name</label>
+    <input type="text" placeholder="Your Name">
+
+    <label>Email</label>
+    <input type="email" placeholder="Your Email">
+
+    <label>Delivery Address</label>
+    <textarea placeholder="Enter address"></textarea>
+
+    <button>Submit Order</button>
+  </div>
 </section>
 
-<section>
-  <h2>Table</h2>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td>Christ</td>
-      <td>28</td>
-    </tr>
-  </table>
+<section id="feedback">
+  <a href="#">Click here to give your feedback</a>
+  <p>"Your feedback helps us serve you better."</p>
 </section>
 
-<section>
-  <h2>Contact Form</h2>
-  <form>
-    <label for="name">Name</label>
-    <input id="name" type="text">
-
-    <label for="email">Email</label>
-    <input id="email" type="email">
-
-    <label for="message">Message</label>
-    <textarea id="message" rows="4"></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
-</section>
+</main>
 
 <footer>
-  © 2026 | HTML Basics Showcase | Designed by Kavya 
+  © 2025 Soul Restaurant | Designed by Kavya
 </footer>
 
 </body>
